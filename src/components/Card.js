@@ -1,21 +1,20 @@
 import React from "react";
 
-import photo from "../assets/katie-zaferes.png";
 import star from "../assets/star.png";
 
-const Card = () => {
+const Card = (props) => {
   return (
     <div className="card">
-      <img className="card--image" src={photo} />
+      <img className="card--image" src={`./images/${props.img}`} />
       <div className="card--stats">
         <img className="card--star" src={star} />
-        <span>5.0</span>
-        <span className="gray">(6) • </span>
-        <span className="gray">USA</span>
+        <span>{props.rating}</span>
+        <span className="gray">({props.reviewCount}) • </span>
+        <span className="gray">{props.country}</span>
       </div>
-      <p>Life Lessons with Katie Zaferes</p>
+      <p>{props.title}</p>
       <p>
-        <span className="bold">From $136</span> / person
+        <span className="bold">From ${props.price}</span> / person
       </p>
     </div>
   );
